@@ -82,6 +82,8 @@ def apply_coupons(cart, coupons = [])
           duplicate_coupons -= 1
         end
         
+        binding.pry
+        
         cart["#{coupon_keys[i]} W/COUPON"] = {
         price: (coupons[i][:cost]/coupons[i][:num]),
         clearance: cart[coupon_keys[i]][:clearance],
