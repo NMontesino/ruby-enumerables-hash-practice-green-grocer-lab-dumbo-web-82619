@@ -69,9 +69,7 @@ def apply_coupons(cart, coupons = [])
     
     coupon_keys.length.times do |i|
       
-      if cart[coupon_keys[i]][:count] >= coupons[i][:num] 
-        
-        cart[coupon_keys[i]][:count] -= coupons[i][:num]
+      if cart[coupon_keys[i]][:count] >= coupons[i][:num]
         
         duplicate_coupons = coupon_keys.select{|n| n == coupon_keys[i]}.length
         eligible_coupons = 0
