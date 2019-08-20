@@ -104,7 +104,7 @@ def apply_coupons(cart, coupons = [])
   
 end
 
-# apply_coupons(consolidate_cart(beer_cart), beer_coupons)
+apply_coupons(consolidate_cart(beer_cart), beer_coupons)
 # binding.pry
 
 def apply_clearance(cart)
