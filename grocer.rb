@@ -77,7 +77,7 @@ def apply_coupons(cart, coupons = [])
         eligible_coupons = 0
         
         while  cart[coupon_keys[i]][:count] - coupons[i][:num] >= 0 do
-          cart[coupon_keys[i]][:count] - coupons[i][:num]
+          cart[coupon_keys[i]][:count] -= coupons[i][:num]
           eligible_coupons += 1
           duplicate_coupons -= 1
         end
