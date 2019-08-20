@@ -77,13 +77,15 @@ def apply_coupons(cart, coupons = [])
         eligible_coupons = 0
         
         while  cart[coupon_keys[i]][:count] - coupons[i][:num] >= 0 do
-          
+          cart[coupon_keys[i]][:count] - coupons[i][:num]
+          eligible_coupons += 1
+          duplicate_coupons -= 1
         end
         
         cart["#{coupon_keys[i]} W/COUPON"] = {
         price: (coupons[i][:cost]/coupons[i][:num]),
         clearance: cart[coupon_keys[i]][:clearance],
-        count: (coupons[i][:num] * duplicate_coupons)
+        count: eligible_coupons
         }
         
       end
