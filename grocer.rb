@@ -76,11 +76,7 @@ def apply_coupons(cart, coupons = [])
         duplicate_coupons = coupon_keys.select{|n| n == coupon_keys[i]}.length
         eligible_coupons = 0
         
-        while  cart[coupon_keys[i]][:count] - coupons[i][:num] >= 0 do
-          cart[coupon_keys[i]][:count] -= coupons[i][:num]
-          eligible_coupons += 1
-          duplicate_coupons -= 1
-        end
+        
         
         cart["#{coupon_keys[i]} W/COUPON"] = {
         price: (coupons[i][:cost]/coupons[i][:num]),
