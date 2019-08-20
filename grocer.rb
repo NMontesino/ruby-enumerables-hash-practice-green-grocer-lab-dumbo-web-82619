@@ -1,5 +1,3 @@
-require 'pry'
-
 beer = {"BEER" => {:price => 13.00, :clearance => false}}
 beer_coupon = {:item => "BEER", :num => 2, :cost => 20.00}
 beer_cart = [beer, beer, beer]
@@ -79,8 +77,6 @@ def apply_coupons(cart, coupons = [])
           eligible_coupons += 1
           duplicate_coupons -= 1
         end
-        
-        # binding.pry
         
         cart["#{coupon_keys[i]} W/COUPON"] = {
         price: (coupons[i][:cost]/coupons[i][:num]),
